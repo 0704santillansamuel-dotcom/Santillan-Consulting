@@ -556,5 +556,74 @@ document.getElementById("meeting").scrollIntoView({behavior:"smooth"});
 
 </script>
 
+<!-- ============================= -->
+<!-- METODOLOGÍA DE TRABAJO -->
+<!-- ============================= -->
+
+<section class="section">
+<h2>Nuestra Metodología de Trabajo</h2>
+
+<div class="about-container">
+
+<div>
+<h3 style="color:var(--gold);margin-bottom:15px;">Diagnóstico Estratégico</h3>
+<p>
+Se analiza la estructura comercial, financiera y operativa del negocio para comprender el funcionamiento real de la empresa y detectar puntos de mejora.
+</p>
+
+<h3 style="color:var(--gold);margin-top:35px;margin-bottom:15px;">Diseño del Plan de Acción</h3>
+<p>
+Se desarrolla una estrategia basada en datos, definiendo políticas de pricing, estructura de costos, control presupuestario y objetivos de rentabilidad.
+</p>
+</div>
+
+<div>
+<h3 style="color:var(--gold);margin-bottom:15px;">Implementación Asistida</h3>
+<p>
+No solo se generan análisis. Se acompaña la aplicación de mejoras en la operación diaria de la empresa.
+</p>
+
+<h3 style="color:var(--gold);margin-top:35px;margin-bottom:15px;">Seguimiento y Optimización</h3>
+<p>
+Se establecen indicadores de control para evaluar el impacto de las decisiones estratégicas y ajustar el rumbo cuando sea necesario.
+</p>
+</div>
+
+</div>
+</section>
+
+<!-- ============================= -->
+<!-- ANIMACIONES ADICIONALES -->
+<!-- ============================= -->
+
+<script>
+
+/* Animación de entrada suave para secciones */
+document.addEventListener("DOMContentLoaded",()=>{
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.style.opacity=1;
+entry.target.style.transform="translateY(0)";
+}
+});
+});
+
+document.querySelectorAll(".section").forEach(sec=>{
+sec.style.opacity=0;
+sec.style.transform="translateY(40px)";
+sec.style.transition="0.8s ease";
+observer.observe(sec);
+});
+});
+
+/* Validación demo del formulario */
+document.querySelector("form")?.addEventListener("submit",function(e){
+e.preventDefault();
+alert("Solicitud enviada correctamente (versión demo)");
+});
+
+</script>
+
 </body>
 </html>
