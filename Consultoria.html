@@ -1,0 +1,560 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Santillán Consulting</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--gold:#C6A75E;
+--black:#0E0E0E;
+--gray:#1A1A1A;
+--light:#EAEAEA;
+--white:#FFFFFF;
+--transition:0.35s ease;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+body{
+background:var(--black);
+color:var(--light);
+font-family:'Inter',sans-serif;
+line-height:1.75;
+}
+
+/* HEADER */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 8%;
+border-bottom:1px solid rgba(198,167,94,0.2);
+position:sticky;
+top:0;
+background:rgba(14,14,14,0.95);
+z-index:1000;
+}
+
+.logo{
+font-family:'Playfair Display',serif;
+font-size:26px;
+color:var(--gold);
+}
+
+nav a{
+color:var(--light);
+text-decoration:none;
+margin-left:25px;
+font-size:14px;
+transition:var(--transition);
+}
+
+nav a:hover{color:var(--gold);}
+
+/* HERO */
+.hero{
+min-height:92vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:0 12%;
+background:url('https://images.unsplash.com/photo-1507679799987-c73779587ccf') center/cover no-repeat;
+background-color:rgba(0,0,0,0.75);
+background-blend-mode:overlay;
+}
+
+.hero h1{
+font-family:'Playfair Display',serif;
+font-size:48px;
+color:var(--gold);
+margin-bottom:25px;
+max-width:900px;
+}
+
+.hero p{
+max-width:850px;
+font-size:18px;
+opacity:0.95;
+}
+
+.btn{
+margin-top:35px;
+padding:14px 45px;
+border:1px solid var(--gold);
+background:none;
+color:var(--gold);
+cursor:pointer;
+transition:var(--transition);
+}
+
+.btn:hover{
+background:var(--gold);
+color:var(--black);
+}
+
+/* SECTIONS */
+.section{
+padding:110px 8%;
+}
+
+.section h2{
+font-family:'Playfair Display',serif;
+font-size:36px;
+color:var(--gold);
+margin-bottom:45px;
+}
+
+/* QUIENES SOMOS */
+.about-container{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+}
+
+.about-container p{
+font-size:16.5px;
+}
+
+/* FOUNDER */
+.founder{
+display:grid;
+grid-template-columns:420px 1fr;
+gap:60px;
+align-items:center;
+}
+
+.founder img{
+width:100%;
+border:1px solid rgba(198,167,94,0.4);
+filter:grayscale(100%);
+transition:0.4s;
+}
+
+.founder img:hover{
+filter:none;
+}
+
+.founder-text h3{
+color:var(--gold);
+margin-bottom:20px;
+font-size:24px;
+}
+
+/* SERVICIOS */
+.service-card{
+background:var(--gray);
+padding:35px;
+margin-bottom:25px;
+border:1px solid rgba(198,167,94,0.2);
+cursor:pointer;
+transition:var(--transition);
+}
+
+.service-card:hover{
+border-color:var(--gold);
+}
+
+.service-content{
+max-height:0;
+overflow:hidden;
+transition:max-height 0.5s ease;
+margin-top:15px;
+font-size:15.5px;
+}
+
+.service-problem{
+font-size:14.5px;
+opacity:0.85;
+line-height:1.6;
+margin-bottom:20px;
+}
+
+.service-points{
+padding-top:20px;
+border-top:1px solid rgba(198,167,94,0.15);
+}
+
+.service-points strong{
+color:var(--gold);
+font-size:13px;
+text-transform:uppercase;
+letter-spacing:0.5px;
+display:block;
+margin-bottom:10px;
+}
+
+.service-points ul{
+list-style:none;
+padding-left:0;
+}
+
+.service-points li{
+position:relative;
+padding-left:20px;
+margin-bottom:8px;
+font-size:14.5px;
+}
+
+.service-points li::before{
+content:"•";
+color:var(--gold);
+position:absolute;
+left:0;
+}
+
+/* CLIENTES */
+.clients-section{
+background:var(--white);
+color:#111;
+}
+
+.clients-section h2{
+color:#111;
+}
+
+.client-card{
+text-align:center;
+cursor:pointer;
+}
+
+.client-card img{
+height:60px;
+filter:grayscale(100%);
+transition:0.3s;
+}
+
+.client-card img:hover{
+filter:none;
+}
+
+.client-info{
+max-height:0;
+overflow:hidden;
+transition:max-height 0.4s ease;
+font-size:14px;
+margin-top:10px;
+}
+
+.clients-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:50px;
+margin-top:50px;
+}
+
+/* FORM */
+#meeting{
+display:none;
+background:linear-gradient(145deg,#151515,#1e1e1e);
+}
+
+form{
+display:grid;
+gap:20px;
+max-width:650px;
+background:#111;
+padding:45px;
+border:1px solid rgba(198,167,94,0.3);
+margin:auto;
+}
+
+.form-row{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+input, textarea{
+padding:14px;
+background:#0f0f0f;
+border:1px solid rgba(198,167,94,0.2);
+color:white;
+}
+
+input:focus, textarea:focus{
+border-color:var(--gold);
+outline:none;
+}
+
+footer{
+text-align:center;
+padding:40px;
+border-top:1px solid rgba(198,167,94,0.2);
+opacity:0.6;
+}
+
+@media(max-width:1000px){
+.about-container, .founder{
+grid-template-columns:1fr;
+}
+.form-row{
+grid-template-columns:1fr;
+}
+}
+
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">Santillán Consulting</div>
+<nav>
+<a href="#about">Quiénes Somos</a>
+<a href="#founder">Fundador</a>
+<a href="#services">Servicios</a>
+<a href="#clients">Clientes</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Tu empresa ya funciona. Ahora es momento de estructurarla para crecer con control.</h1>
+<p>
+Si sentís que vendés pero no tenés total claridad sobre márgenes,
+proyecciones o eficiencia comercial, el problema no es la facturación:
+es la falta de estructura estratégica.
+Nos enfocamos en ordenar, profesionalizar y optimizar para que cada decisión tenga fundamento financiero.
+</p>
+<button class="btn" onclick="mostrarFormulario()">Solicitar Reunión Estratégica</button>
+</section>
+
+<section id="about" class="section">
+<h2>Quiénes Somos</h2>
+<div class="about-container">
+<div>
+<p>
+Santillán Consulting es una firma orientada a profesionalizar la gestión de empresas en crecimiento.
+Aplicamos metodologías de planeamiento, control y análisis financiero propias de grandes corporaciones,
+adaptadas a la realidad operativa de pymes.
+</p>
+<p style="margin-top:20px;">
+Trabajamos sobre estructura comercial, pricing, rentabilidad por canal,
+proyecciones financieras y optimización de procesos.
+El objetivo no es generar informes, sino mejorar resultados concretos.
+</p>
+</div>
+<div>
+<p>
+Nuestra visión parte de una premisa clara:
+la mayoría de las pymes no necesitan vender más,
+necesitan vender mejor, con mayor margen y menor desorden operativo.
+</p>
+<p style="margin-top:20px;">
+Intervenimos con criterio estratégico, análisis profundo y acompañamiento real en la implementación.
+No somos consultores externos que entregan un PowerPoint.
+Trabajamos sobre decisiones que impactan directamente en la rentabilidad.
+</p>
+</div>
+</div>
+</section>
+
+<section id="founder" class="section">
+<h2>Fundador</h2>
+<div class="founder">
+<img src="img/hugo-santillan.jpeg" alt="Hugo Santillán">
+<div class="founder-text">
+<h3>Hugo Manuel Santillán</h3>
+<p>
+Más de 20 años liderando áreas de planeamiento comercial, control presupuestario y análisis estratégico.
+Especialista en estructuración de forecast, análisis de rentabilidad por producto y canal,
+optimización de pricing y profesionalización de equipos comerciales.
+</p>
+<p style="margin-top:18px;">
+Ha trabajado en entornos de alta complejidad operativa,
+participando en procesos de expansión, revisión de estructuras de costos,
+mejora de eficiencia y toma de decisiones basada en datos.
+</p>
+<p style="margin-top:18px;">
+Su diferencial radica en combinar rigurosidad analítica con visión práctica de negocio.
+No analiza números aislados; analiza impacto real en margen y sostenibilidad.
+</p>
+</div>
+</div>
+</section>
+
+<section id="services" class="section">
+<h2>Servicios Estratégicos</h2>
+
+<div class="service-card" onclick="toggleService(this)">
+<h3>Optimización de Pricing y Margen</h3>
+<div class="service-content">
+<div class="service-problem">
+Las pyMEs suelen establecer precios sin analizar costos reales, márgenes por producto o comportamiento del mercado, lo que genera pérdida de rentabilidad.
+</div>
+<div class="service-points">
+<strong>Puntos a trabajar:</strong>
+<ul>
+<li>Análisis integral de estructura de precios, elasticidad, costos directos e indirectos</li>
+<li>Rentabilidad por producto y canal</li>
+<li>Revisión de descuentos, bonificaciones y políticas comerciales</li>
+<li>Diseño de estructura de precios alineada a objetivos estratégicos y posicionamiento</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="service-card" onclick="toggleService(this)">
+<h3>Planeamiento Comercial y Forecast Financiero</h3>
+<div class="service-content">
+<div class="service-problem">
+Sin proyecciones ni control presupuestario, las pyMEs operan reactivamente y sin capacidad de anticipación.
+</div>
+<div class="service-points">
+<strong>Puntos a trabajar:</strong>
+<ul>
+<li>Construcción de presupuestos anuales y seguimiento mensual Real vs Budget</li>
+<li>Proyección de ventas y márgenes</li>
+<li>Desarrollo de modelos predictivos y análisis de desvíos</li>
+<li>Toma de decisiones anticipada basada en datos</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="service-card" onclick="toggleService(this)">
+<h3>Business Intelligence y KPIs Estratégicos</h3>
+<div class="service-content">
+<div class="service-problem">
+La mayoría de las pyMEs no tienen información consolidada ni indicadores claros para tomar decisiones.
+</div>
+<div class="service-points">
+<strong>Puntos a trabajar:</strong>
+<ul>
+<li>Definición de indicadores clave de performance (KPIs)</li>
+<li>Diseño de dashboards ejecutivos y segmentación avanzada de cartera</li>
+<li>Estructuración de información para dirección</li>
+<li>Toma de decisiones estratégicas basadas en datos</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="service-card" onclick="toggleService(this)">
+<h3>Optimización de Estructura Comercial</h3>
+<div class="service-content">
+<div class="service-problem">
+Procesos internos deficientes y equipos comerciales sin estructura adecuada generan ineficiencia y pérdida de ventas.
+</div>
+<div class="service-points">
+<strong>Puntos a trabajar:</strong>
+<ul>
+<li>Evaluación de procesos internos y productividad de equipos</li>
+<li>Análisis de estructura de incentivos</li>
+<li>Eficiencia operativa y optimización de flujos de trabajo</li>
+<li>Rediseño de modelo comercial para maximizar resultados</li>
+</ul>
+</div>
+</div>
+</div>
+
+</section>
+
+<section id="clients" class="section clients-section">
+<h2>Experiencia Corporativa</h2>
+
+<div class="clients-grid">
+
+<div class="client-card" onclick="toggleClient(this)">
+<img src="img/Logos/trilenium.png">
+<div class="client-info">
+Industria del entretenimiento y casino. Análisis financiero y planeamiento estratégico en entornos de alta regulación.
+</div>
+</div>
+
+<div class="client-card" onclick="toggleClient(this)">
+<img src="img/Logos/montagne.png">
+<div class="client-info">
+Retail indumentaria outdoor. Optimización de márgenes, control presupuestario y análisis por canal.
+</div>
+</div>
+
+<div class="client-card" onclick="toggleClient(this)">
+<img src="img/Logos/avon.png">
+<div class="client-info">
+Consumo masivo y venta directa. Análisis comercial y seguimiento de performance.
+</div>
+</div>
+
+<div class="client-card" onclick="toggleClient(this)">
+<img src="img/Logos/hipodromo.png">
+<div class="client-info">
+Entretenimiento y eventos. Control presupuestario y análisis de rentabilidad operativa.
+</div>
+</div>
+
+<div class="client-card" onclick="toggleClient(this)">
+<img src="img/Logos/granja.png">
+<div class="client-info">
+Industria alimenticia. Estructuración de costos y análisis de eficiencia productiva.
+</div>
+</div>
+
+<div class="client-card" onclick="toggleClient(this)">
+<img src="img/Logos/frigor.png">
+<div class="client-info">
+Industria frigorífica. Empresa de Postres y Helados. Optimización de estructura comercial y márgenes.
+</div>
+</div>
+
+<div class="client-card" onclick="toggleClient(this)">
+<img src="img/Logos/trf.png">
+<div class="client-info">
+Logística farmacéutica y medicinal. Análisis financiero y proyecciones estratégicas.
+</div>
+</div>
+
+<div class="client-card" onclick="toggleClient(this)">
+<img src="img/Logos/ver.png">
+<div class="client-info">
+Retail de indumentaria femenina. Planeamiento comercial y seguimiento de KPIs.
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="meeting" class="section">
+<h2>Solicitud de Reunión Estratégica</h2>
+<form>
+<div class="form-row">
+<input type="text" placeholder="Nombre y Apellido" required>
+<input type="text" placeholder="Empresa" required>
+</div>
+<div class="form-row">
+<input type="text" placeholder="Rubro" required>
+<input type="tel" placeholder="Teléfono / WhatsApp" required>
+</div>
+<input type="email" placeholder="Correo Electrónico" required>
+<textarea rows="4" placeholder="Principal desafío a resolver" required></textarea>
+<button type="submit" class="btn">Enviar Solicitud</button>
+</form>
+</section>
+
+<footer>
+©️ 2026 Santillán Consulting | +54 9 11 6939-1785
+</footer>
+
+<script>
+
+function toggleService(card){
+const content = card.querySelector(".service-content");
+content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + "px";
+}
+
+function toggleClient(card){
+const info = card.querySelector(".client-info");
+info.style.maxHeight = info.style.maxHeight ? null : info.scrollHeight + "px";
+}
+
+function mostrarFormulario(){
+document.getElementById("meeting").style.display="block";
+document.getElementById("meeting").scrollIntoView({behavior:"smooth"});
+}
+
+</script>
+
+</body>
+</html>
